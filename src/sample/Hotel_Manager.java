@@ -3,7 +3,7 @@ package sample;
 public class Hotel_Manager
 {
     DB_Manager DB;
-    public String admin_password = "l33t";
+    public String admin_password = "admin";
 
     public float single_room_cost;
     public float double_room_cost;
@@ -14,7 +14,9 @@ public class Hotel_Manager
 
     public Hotel_Manager() // constructer for the Hotel_Manager
     {
+
         System.out.println("hotel created");
+        // create the new DB manager for the hotel
         this.DB = new DB_Manager();
 
 

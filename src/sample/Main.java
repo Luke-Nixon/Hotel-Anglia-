@@ -23,22 +23,18 @@ public class Main extends Application
         FXMLLoader loader = new FXMLLoader(getClass().getResource("main_menu.fxml"));
         Parent root = loader.load();
 
+        // get the controller of the main menu
         Main_Menu_Controller main_menu_controller = loader.getController();
+        // set the window and the hotel of the controller to be the window and the hotel created
         main_menu_controller.window = window;
         main_menu_controller.hotel = hotel;
+        // set the scene
         Scene scene = new Scene(root);
         window.setScene(scene);
+        // show the scene
         window.show();
 
-
-
-
-
-
     }
-
-
-
 
 /**
  * The main() method is ignored in correctly deployed JavaFX application.

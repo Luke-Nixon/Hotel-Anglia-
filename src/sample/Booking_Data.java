@@ -15,7 +15,7 @@ public class Booking_Data {
     public String room_id;
 
 
-
+    // constructor for the class
     public Booking_Data()
     {
         this.first_name = "";
@@ -28,6 +28,7 @@ public class Booking_Data {
         this.room_id = "";
     }
 
+    // overloaded constructor (used for tableview)
     public Booking_Data (String first_name,String last_name,String room_type,String check_in_date,String check_out_date,String customer_id,String booking_id,String room_id)
     {
         this.first_name = first_name;
@@ -39,6 +40,9 @@ public class Booking_Data {
         this.booking_id = booking_id;
         this.room_id = room_id;
     }
+
+
+    // getter and setter methods for each field (needed for the tableview)
 
     public String getFirst_name() {
         return first_name;
