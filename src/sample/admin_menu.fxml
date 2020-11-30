@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin_Menu_Controller">
+    <children>
+
+        <Button layoutX="24.0" layoutY="14.0" mnemonicParsing="false" onAction="#main_menu_click" text="Main Menu" />
+        <TabPane layoutX="14.0" layoutY="48.0" prefHeight="346.0" prefWidth="581.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Admin Password">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label fx:id="password_indicator" layoutX="36.0" layoutY="14.0" text="Enter a new password" />
+                                <PasswordField fx:id="change_password" layoutX="22.0" layoutY="37.0" promptText="Change Password" />
+                                <PasswordField fx:id="confirm_password" layoutX="22.0" layoutY="71.0" promptText="Confirm Password" />
+                                <Button fx:id="change_password_button" layoutX="42.0" layoutY="112.0" mnemonicParsing="false" onAction="#change_password_button_click" text="Change Password" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Manage Bookings">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Button layoutX="469.0" layoutY="146.0" onAction="#load_bookings" prefHeight="25.0" prefWidth="106.0" text="Load Bookings">
+                                </Button>
+                                <TableView  fx:id="bookings_table" layoutX="38.0" layoutY="39.0" prefHeight="233.0" prefWidth="425.0">
+
+                                    <columns>
+                                        <TableColumn fx:id="first_name" prefWidth="75.0" text="first_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="first_name" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="last_name" prefWidth="75.0" text="last_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="last_name" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="room_type" prefWidth="75.0" text="room_type">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="room_type" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_date" prefWidth="75.0" text="check_in_date">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_date" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_out_date" prefWidth="75.0" text="check_out_date">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_out_date" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="customer_id" prefWidth="75.0" text="customer_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="customer_id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="booking_id" prefWidth="75.0" text="booking_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="booking_id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="room_id" prefWidth="75.0" text="room_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="room_id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+
+                                </TableView>
+
+
+                                <Button layoutX="469.0" layoutY="177.0" mnemonicParsing="false" onAction="#on_remove_booking" text="Remove Booking" />
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Check In/Check Out">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TableView fx:id="checking_table" layoutX="31.0" layoutY="42.0" prefHeight="234.0" prefWidth="376.0">
+                                    <columns>
+                                        <TableColumn fx:id="check_in_first_name" prefWidth="75.0" text="first_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_first_name" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_last_name" prefWidth="75.0" text="last_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_last_name" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_room_type" prefWidth="75.0" text="room_type">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_room_type" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_room_id" prefWidth="75.0" text="room_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_room_id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_status" prefWidth="75.0" text="status">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_status" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_customer_id" prefWidth="75.0" text="customer_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_customer_id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                    <columns>
+                                        <TableColumn fx:id="check_in_booking_id" prefWidth="75.0" text="booking_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_booking_id" />
+                                            </cellValueFactory>
+                                        </TableColumn>
+                                    </columns>
+
+                                </TableView>
+
+                                <Button layoutX="457.0" layoutY="197.0" mnemonicParsing="false" onAction="#check_in" prefHeight="25.0" prefWidth="104.0" text="Check In" />
+                                <Button layoutX="457.0" layoutY="234.0" mnemonicParsing="false" onAction="#check_out" prefHeight="25.0" prefWidth="104.0" text="Check Out" />
+                                <Button layoutX="457.0" layoutY="159.0" mnemonicParsing="false" onAction="#load_customers" prefHeight="25.0" prefWidth="104.0" text="Load Customers" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Add Service">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+
+                            <children>
+
+                                <TableView fx:id="customer_select_table" layoutX="27.0" layoutY="28.0" onMouseClicked="#customers_clicked" prefHeight="200.0" prefWidth="224.0">
+                                    <columns>
+
+                                        <TableColumn fx:id="service_customer_id" prefWidth="75.0" text="customer_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_customer_id" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+                                        <TableColumn fx:id="service_first_name" prefWidth="75.0" text="first_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_first_name" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+                                        <TableColumn fx:id="service_last_name" prefWidth="75.0" text="last_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_last_name" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+
+                                    </columns>
+
+                                </TableView>
+
+                                <TableView fx:id="service_table" layoutX="291.0" layoutY="28.0" prefHeight="156.0" prefWidth="273.0">
+                                    <columns>
+
+                                        <TableColumn fx:id="services_customer_id" prefWidth="77.0" text="customer_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="customer_id" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+
+                                        <TableColumn fx:id="description" prefWidth="102.0" text="description">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="description" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+                                        <TableColumn fx:id="price" prefWidth="93.0" text="price">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="price" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+
+                                    </columns>
+                                </TableView>
+
+                                <TextField fx:id="service_description" layoutX="290.0" layoutY="200.0" prefHeight="25.0" prefWidth="274.0" promptText="Service Description" />
+                                <Button layoutX="450.0" layoutY="271.0" mnemonicParsing="false" onAction="#add_service" text="Add Service" />
+                                <TextField fx:id="service_cost" layoutX="415.0" layoutY="235.0" promptText="Cost of Service" />
+                                <Button layoutX="88.0" layoutY="235.0" mnemonicParsing="false" onAction="#service_load_customers" text="Load Customers" />
+
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Payment">
+                    <content>
+                        <AnchorPane>
+                            <children>
+
+
+                                <TableView fx:id="payment_select_table" layoutX="27.0" layoutY="28.0" onMouseClicked="#customers_clicked" prefHeight="200.0" prefWidth="224.0">
+                                    <columns>
+
+                                        <TableColumn fx:id="payment_customer_id" prefWidth="75.0" text="customer_id">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_customer_id" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+                                        <TableColumn fx:id="payment_first_name" prefWidth="75.0" text="first_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_first_name" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+                                        <TableColumn fx:id="payment_last_name" prefWidth="75.0" text="last_name">
+
+                                            <cellValueFactory>
+                                                <PropertyValueFactory property="check_in_last_name" />
+                                            </cellValueFactory>
+
+                                        </TableColumn>
+
+
+                                    </columns>
+
+                                </TableView>
+                        <TextArea fx:id="receipt_box" layoutX="331.0" layoutY="35.0" prefHeight="200.0" prefWidth="200.0" />
+                        <Button layoutX="82.0" layoutY="235.0" mnemonicParsing="false" onAction="#load_payment_customers" text="Load Customers" />
+                        <Button layoutX="389.0" layoutY="270.0" mnemonicParsing="false" onAction="#print_receipt" text="Print Receipt" />
+                        <Button layoutX="49.0" layoutY="270.0" mnemonicParsing="false" onAction="#check_out_and_pay" prefHeight="25.0" prefWidth="181.0" text="Check Out And Pay" />
+                        <Label fx:id="monthly_revenue" layoutX="343.0" layoutY="239.0" text="Monthly Revenue:" />
+
+                            </children>
+                        </AnchorPane>
+
+                    </content>
+                </Tab>
+
+                <Tab text="Adjust Pricing">
+                    <content>
+
+                        <AnchorPane>
+                     <children>
+                        <Button  onAction="#adjust_prices" layoutX="78.0" layoutY="195.0" mnemonicParsing="false" text="Set Prices" />
+
+                         <TextField fx:id="single_cost" layoutX="31.0" layoutY="37.0" />
+                        <TextField fx:id="double_cost" layoutX="31.0" layoutY="69.0" />
+                        <TextField fx:id="executive_cost" layoutX="31.0" layoutY="106.0" />
+                        <TextField fx:id="presidential_cost" layoutX="31.0" layoutY="146.0" />
+
+                     </children></AnchorPane>
+
+                    </content>
+                </Tab>
+
+            </tabs>
+        </TabPane>
+
+
+    </children>
+</AnchorPane>
